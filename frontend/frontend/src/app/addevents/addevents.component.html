@@ -1,0 +1,24 @@
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+<div class="container mt-5">
+   <h1>add event</h1>
+   <div class="row">
+      <div class="col-lg-6 mx-auto">
+         <label >Title : </label>
+         <input [(ngModel)]="event.title" type="text" placeholder="what's your event called ? " class="form-control m-2">
+         <label >Description: </label>
+         <input [(ngModel)]="event.description "type="text" placeholder="describe your events in few words" class="form-control m-2">
+         <label >Date : </label>
+         <input [(ngModel)]="event.date" type="text" placeholder="enter your event date " class="form-control m-2">
+         <label >Address: </label>
+         <input [(ngModel)]="event.address"type="text" placeholder="where this event will be heald ? " class="form-control m-2">
+         <label >Image : </label>
+         <input  (change)="selectImage($event)"type="file" placeholder="image" class="form-control m-2">
+         <button (click)="add()" class="btn btn-dark m-2 form-control">save</button>
+      </div>
+   </div>
+</div>
+

@@ -1,0 +1,23 @@
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+<div class="container mt-5">
+   <h1 class="mt-5">Edit event</h1>
+   <div class="row">
+      <div class="col-lg-6 mx-auto mt-3">
+         <label >title : </label>
+         <input [(ngModel)]="event.title" type="text" placeholder="title" class="form-control">
+         <label >description: </label>
+         <input [(ngModel)]="event.description"  type="text" placeholder="title" class="form-control">
+         <label >date: </label>
+         <input [(ngModel)]="event.date"  type="text" placeholder="title" class="form-control">
+         <label >address : </label>
+         <input [(ngModel)]="event.address"  type="text" placeholder="title" class="form-control">
+         <label >image : </label>
+         <input type="file" placeholder="image" class="form-control m-2" (change)="selectImage($event)">
+         <button class="btn btn-dark my-4 form-control" (click)="update()">save</button>
+      </div>
+   </div>
+</div>

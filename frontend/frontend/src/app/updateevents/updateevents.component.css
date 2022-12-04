@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+input {
+   margin : 1.1em
+}
+h1 {
+   font-family: 'Oswald', sans-serif;
+   letter-spacing: .3em;
+}
+label {
+   letter-spacing: .1em;
+   font-weight: 500;
+}
