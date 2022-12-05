@@ -65,13 +65,3 @@ button {
    border: 1px solid; 
     color:#fff;
 }
-.search {
-   padding: .5em 5em;
-   text-transform: capitalize;
-   font-weight: 600;
-   letter-spacing: .15rem;
-}
-select {
-   border : 2px solid blue;
-}
-

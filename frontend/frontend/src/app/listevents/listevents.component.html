@@ -8,13 +8,29 @@
 <body>
 <div class="container">
   <div class="row  my-5 ">
-    <div class="col col-lg-6"><h1 class="title">Event List </h1></div>
-    <div class="col col-lg-2 ms-auto mt-2"> <a href="#" class="card-link btn btn-dark px-5 py-2" [routerLink]="['/add']">Add</a>
+    <div class="col col-lg-3"><h1 class="title">Event List </h1></div>
+    <div class="col-lg-4 mt-2">
+      <div class="row">
+        <div class="col-lg-5 ">
+  <select class="form-select" aria-label="Default select example"  ngModel (ngModelChange)="SelectHandler($event)">
+        <option selected>select date </option>
+        <option  *ngFor="let item of date">{{item.date}}</option>
+      </select>
+        </div>
+        <div class="col-lg-6">
+           <button class="btn btn-primary search" (click)="getevents()">search</button>
+        </div>
+      </div>
+     
+   
+    </div>
+    
+    
+    <div class="col-lg-1 ms-auto "> <a href="#" class="card-link btn btn-dark px-5 py-2" [routerLink]="['/add']">Add</a>
   </div>
    
   </div>
   
-
 <div class="container mx-auto ">
 <div class="row ">
   <div class="col-lg-4 mb-lg-4" *ngFor="let item of events">

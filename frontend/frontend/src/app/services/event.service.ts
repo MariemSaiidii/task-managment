@@ -20,6 +20,12 @@ url='http://127.0.0.1:3000/event/';
   getById(id:any){
     return this.http.get(this.url+'getById/'+id);
   }
+  getByDate(date :any){
+    return this.http.get(this.url+'getbydate/'+ date);
+  }
+  getDate(){
+    return this.http.get(this.url+'getdate');
+  }
   delete(id:any){
     return this.http.delete(this.url+'delete/'+id);
   }

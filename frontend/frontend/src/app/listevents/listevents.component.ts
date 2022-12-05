@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { EventService } from '../services/event.service';
 
@@ -9,10 +10,13 @@ import { EventService } from '../services/event.service';
 })
 export class ListeventsComponent implements OnInit {
 events: any ;
-  constructor(private _event : EventService) { }
+date : any ;
+dateSelected : any ; 
+  constructor(private _event : EventService , private router : Router) { }
 
   ngOnInit(): void {
-  this._event.getAll()
+    
+      this._event.getAll()
       .subscribe(
         (res)=>{
           this.events = res
@@ -21,7 +25,36 @@ events: any ;
           console.log(err)
         }
       )
+  
+  this._event.getDate()
+  .subscribe(
+    (res)=>{
+      this.date = res ;
+     
+      console.log(res)    
+    },
+    (err)=>{
+      console.log(err)
+    }
+    )
   }
+
+SelectHandler(e : any){
+  this.dateSelected= e ; 
+  }
+getevents(){
+this._event.getByDate(this.dateSelected)
+  .subscribe(
+    (res)=>{
+     this.router.navigate(["/filteredEvents/", this.dateSelected])
+    },
+    (err)=>{
+      console.log(err)
+    }
+  )
+
+}
+
 delete( id : any){
   Swal.fire({
     title: 'Are you sure?',

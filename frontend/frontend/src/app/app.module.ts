@@ -8,6 +8,7 @@ import { ListeventsComponent } from './listevents/listevents.component';
 import { AddeventsComponent } from './addevents/addevents.component';
 import { UpdateeventsComponent } from './updateevents/updateevents.component';
 import { FormsModule } from '@angular/forms';
+import { FilterEventsComponent } from './filter-events/filter-events.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     WelcomeComponent,
     ListeventsComponent,
     AddeventsComponent,
-    UpdateeventsComponent
+    UpdateeventsComponent,
+    FilterEventsComponent
   ],
   imports: [
     BrowserModule,

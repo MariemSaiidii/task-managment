@@ -47,7 +47,7 @@ router.post('/add',upload.any('image'),(req,res)=>{
 
 router.get('/all' , (req,res)=>{
 
-   event.find().sort( { date: 1 })
+    event.find().sort( { date: 1 })
    
        .then(
            (result)=>{
@@ -80,7 +80,33 @@ router.get('/getById/:id',(req,res)=>{
        )    
 })
 
-
+router.get('/getbydate/:date', (req , res)=>{
+    let datee =req.params.date ;
+    event.find( { date : { $eq:  new Date(datee) } })
+    .then(
+        (result)=>{
+            res.send((result));
+        }
+    )
+    .catch(
+        (err)=>{
+            res.send(err);
+        }
+    )    
+})
+router.get('/getdate', (req , res)=>{
+    event.aggregate( [ { $project : { _id: 0 , date : 1} } ] )
+    .then(
+        (result)=>{
+            res.send(result);
+        }
+    )
+    .catch(
+        (err)=>{
+            res.send(err);
+        }
+    )    
+})
 
 
 router.delete('/delete/:id',(req,res)=>{
